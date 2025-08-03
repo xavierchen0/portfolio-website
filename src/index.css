@@ -1,25 +1,25 @@
 @import "tailwindcss";
 
-:root {
-  --base: #191724;
-  --surface: #1f1d2e;
-  --overlay: #26233a;
-  --muted: #6e6a86;
-  --subtle: #908caa;
-  --text: #e0def4;
-  --love: #eb6f92;
-  --gold: #f6c177;
-  --rose: #ebbcba;
-  --pine: #31748f;
-  --foam: #9ccfd8;
-  --iris: #c4a7e7;
-  --highlight-low: #21202e;
-  --highlight-med: #403d52;
-  --highlight-high: #524f67;
+@theme {
+  --color-rosepinebase: #191724;
+  --color-rosepinesurface: #1f1d2e;
+  --color-rosepineoverlay: #26233a;
+  --color-rosepinemuted: #6e6a86;
+  --color-rosepinesubtle: #908caa;
+  --color-rosepinetext: #e0def4;
+  --color-rosepinelove: #eb6f92;
+  --color-rosepinegold: #f6c177;
+  --color-rosepinerose: #ebbcba;
+  --color-rosepinepine: #31748f;
+  --color-rosepinefoam: #9ccfd8;
+  --color-rosepineiris: #c4a7e7;
+  --color-rosepinehighlight-low: #21202e;
+  --color-rosepinehighlight-med: #403d52;
+  --color-rosepinehighlight-high: #524f67;
 }
 
 body {
   font-family: 'JetBrains Mono', monospace;
-  background-color: var(--base);
-  color: var(--text);
+  background-color: var(--color-rosepinebase);
+  color: var(--color-rosepinetext);
 }

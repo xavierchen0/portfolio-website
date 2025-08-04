@@ -3,7 +3,6 @@ import { motion } from "motion/react"
 
 export function NavBar({ items, className }) {
   const [activeTab, setActiveTab] = useState(items[0].name)
-  const [isMobile, setIsMobile] = useState(false)
 
   const handleItemClick = (item) => {
     setActiveTab(item.name)

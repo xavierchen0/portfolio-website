@@ -24,16 +24,17 @@ export function NavBar({ items, className }) {
   // 2. create the inner navbar container for visual presentation of the navitems
   // 3. create each item's button
   return (
-    // TODO: Fix scaling for mobile
     <div
-      className={`fixed ${
+      className={`fixed bottom-0 left-1/2 z-50 mb-6 -translate-x-1/2 transition-all duration-500 ease-out md:top-0 md:mt-6 ${
         isScrolled
-          ? "md:top-1/2 md:left-6 md:flex md:-translate-y-1/2 md:flex-col"
-          : "bottom-0 left-1/2 z-50 -translate-x-1/2 sm:top-0"
-      } mb-6 transition-all duration-500 sm:pt-6 ease-out${className || ""}`}
+          ? "ml-9 md:top-1/2 md:left-6 md:-translate-y-1/2 md:flex-col"
+          : "md:top-0 md:mt-6"
+      }`}
     >
       <div
-        className={`${isScrolled ? "sm:flex-col sm:px-2 sm:py-2" : "gap-3 px-3 py-2"} border-border flex items-center rounded-full border bg-gray-100/5 shadow-lg backdrop-blur-lg transition-all duration-300 ease-out`}
+        className={`flex items-center gap-3 rounded-full bg-gray-100/5 px-3 py-4 shadow-lg backdrop-blur-lg transition-all duration-300 ease-out ${
+          isScrolled ? "md:flex-col md:gap-3 md:px-3 md:py-3" : ""
+        }`}
       >
         {items.map((item) => {
           const Icon = item.icon;
@@ -44,9 +45,11 @@ export function NavBar({ items, className }) {
               whileTap={{ scale: 0.9 }}
               key={item.name}
               onClick={() => handleItemClick(item)}
-              className={`${isScrolled ? "sm:px-3 sm:py-3" : "px-6 py-2"} text-foreground/80 hover:text-rosepinelove relative cursor-pointer rounded-full text-sm font-semibold transition-all transition-colors duration-300 ease-out ${isActive ? "bg-rosepinehighlight-high" : ""} `}
+              className={`text-foreground/80 hover:text-rosepinelove relative cursor-pointer rounded-full px-3 py-2 text-sm font-semibold ${
+                isActive ? "bg-rosepinehighlight-high" : ""
+              }`}
             >
-              <span className={`hidden ${isScrolled ? "" : "md:inline"}`}>
+              <span className={`hidden ${isScrolled ? "" : "md:inline"} `}>
                 {item.name}
               </span>
               <span className={`${isScrolled ? "" : "md:hidden"}`}>
@@ -59,22 +62,34 @@ export function NavBar({ items, className }) {
                   initial={false}
                   transition={{
                     type: "spring",
-                    stiffness: 250,
-                    damping: 30,
+                    bounce: 0.2,
+                    duration: 0.1,
                   }}
                 >
                   <div
-                    className={`${isScrolled ? "sm:-left-4 sm:h-8 sm:w-1 sm:translate-y-1 sm:rounded-l-full" : "-top-4 left-1/2 h-1 w-8 -translate-x-1/2 rounded-t-full"} bg-rosepinelove absolute`}
+                    className={`bg-rosepinelove absolute -top-3 left-1/2 h-1 w-4 -translate-x-1/2 rounded-t-full ${
+                      isScrolled
+                        ? "md:top-1/2 md:-left-1.5 md:h-4 md:w-1 md:-translate-y-1/2 md:rounded-full"
+                        : ""
+                    }`}
                   >
                     <div
-                      className={`${isScrolled ? "sm: w-6 sm:h-12" : "w-12 sm:h-6"} bg-rosepinelove/20 absolute -top-2 -left-2 rounded-full blur-md`}
-                    />
-                    <div
-                      className={`${isScrolled ? "sm:-left-1 sm:h-8 sm:w-6" : "-top-1 h-6 w-8"} bg-rosepinelove/20 absolute rounded-full blur-md`}
-                    />
-                    <div
-                      className={`${isScrolled ? "sm:left-0" : "top-0"} bg-rosepinelove/20 absolute h-4 w-4 rounded-full blur-md`}
-                    />
+                      className={`bg-rosepinelove/20 absolute -top-2 -left-2 h-6 w-8 rounded-full blur-md ${
+                        isScrolled ? "md:h-8 md:w-6" : ""
+                      }`}
+                    >
+                      <div
+                        className={`bg-rosepinelove/20 absolute -top-1 h-6 w-8 rounded-full blur-md ${
+                          isScrolled ? "md:-left-1 md:h-8 md:w-6" : ""
+                        }`}
+                      >
+                        <div
+                          className={`bg-rosepinelove/20 absolute top-0 h-4 w-4 rounded-full ${
+                            isScrolled ? "md:left-0" : ""
+                          }`}
+                        ></div>
+                      </div>
+                    </div>
                   </div>
                 </motion.div>
               )}

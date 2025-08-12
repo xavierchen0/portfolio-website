@@ -1,5 +1,6 @@
 import "./App.css";
 import { NavBar } from "./components/NavBar.jsx";
+import HeroSection from "./components/HeroSection.jsx";
 import {
   Info,
   BookOpenText,
@@ -21,7 +22,8 @@ function App() {
   return (
     <>
       <NavBar items={navItems} />
-      {/* Hero Section */}
+      <HeroSection />
+
       <section className="flex h-screen items-center justify-center bg-gradient-to-b">
         <h1 className="text-6xl text-white">About Me</h1>
       </section>

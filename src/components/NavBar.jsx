@@ -32,8 +32,8 @@ export function NavBar({ items, className }) {
       }`}
     >
       <div
-        className={`flex items-center gap-3 rounded-full bg-gray-100/5 px-3 py-4 shadow-lg backdrop-blur-lg transition-all duration-300 ease-out ${
-          isScrolled ? "md:flex-col md:gap-3 md:px-3 md:py-3" : ""
+        className={`flex items-center gap-3 rounded-full bg-gray-100/5 px-3 py-1 shadow-lg backdrop-blur-lg transition-all duration-300 ease-out ${
+          isScrolled ? "md:flex-col md:gap-3 md:px-1 md:py-3" : ""
         }`}
       >
         {items.map((item) => {
@@ -67,9 +67,9 @@ export function NavBar({ items, className }) {
                   }}
                 >
                   <div
-                    className={`bg-rosepinelove absolute -top-3 left-1/2 h-1 w-4 -translate-x-1/2 rounded-t-full ${
+                    className={`bg-rosepinelove absolute -top-2 left-1/2 h-1 w-4 -translate-x-1/2 rounded-t-full ${
                       isScrolled
-                        ? "md:top-1/2 md:-left-1.5 md:h-4 md:w-1 md:-translate-y-1/2 md:rounded-full"
+                        ? "md:top-1/2 md:-left-2 md:h-4 md:w-1 md:-translate-y-1/2 md:rounded-full"
                         : ""
                     }`}
                   >

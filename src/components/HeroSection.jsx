@@ -1,18 +1,18 @@
-import { TypeOutline } from "lucide-react";
 import DecryptedText from "./TextAnimations/DecryptedText/DecryptedText.jsx";
 import React, { useState, useEffect } from "react";
+import PixelTransitionProfile from "./PixelTransitionProfile.jsx";
 
 const greetings = [
   { lang: "EN", text: "Hello!" },
+  { lang: "ZH", text: "你好!" },
   { lang: "ES", text: "Hola!" },
+  { lang: "JA", text: "こんにちは!" },
   { lang: "FR", text: "Bonjour!" },
+  { lang: "KO", text: "안녕하세요!" },
   { lang: "DE", text: "Hallo!" },
+  { lang: "RU", text: "Привет!" },
   { lang: "IT", text: "Ciao!" },
   { lang: "PT", text: "Olá!" },
-  { lang: "JA", text: "こんにちは!" },
-  { lang: "KO", text: "안녕하세요!" },
-  { lang: "ZH", text: "你好!" },
-  { lang: "RU", text: "Привет!" },
 ];
 
 export default function HeroSection() {
@@ -20,9 +20,6 @@ export default function HeroSection() {
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
   const [showCursor, setShowCursor] = useState(true);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [showTooltip, setShowTooltip] = useState(false);
-  const [sparks, setSparks] = useState([]);
 
   // Typing and deleting text
   useEffect(() => {
@@ -89,10 +86,8 @@ export default function HeroSection() {
         {/* Mobile: stack vertically; Desktop: side-by-side */}
         <div className="item-center grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           {/* Profile Image - Mobile: Top; Desktop: left */}
-          <div className="order-1 flex justify-center md:justify-start">
-            <div className="ring-rosepinefoam h-48 w-48 rounded-full ring-4 md:h-80 md:w-80">
-              <img src="/ProfilePic1.jpg" className="rounded-full" />
-            </div>
+          <div className="order-1 flex justify-center md:ml-6 md:justify-start">
+            <PixelTransitionProfile />
           </div>
 
           {/* Content - Mobile: Bottom, Desktop right */}

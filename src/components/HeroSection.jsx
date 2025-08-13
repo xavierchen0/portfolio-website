@@ -82,9 +82,9 @@ export default function HeroSection() {
 
   return (
     <section className="flex min-h-screen items-center justify-center px-4 py-8">
-      <div className="mx-auto w-full max-w-6xl">
+      <div className="w-full max-w-6xl">
         {/* Mobile: stack vertically; Desktop: side-by-side */}
-        <div className="item-center grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
           {/* Profile Image - Mobile: Top; Desktop: left */}
           <div className="order-1 flex justify-center md:ml-6 md:justify-start">
             <PixelTransitionProfile />

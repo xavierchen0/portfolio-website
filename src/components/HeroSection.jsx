@@ -1,6 +1,7 @@
 import DecryptedText from "./TextAnimations/DecryptedText/DecryptedText.jsx";
 import React, { useState, useEffect } from "react";
 import PixelTransitionProfile from "./PixelTransitionProfile.jsx";
+import BlurText from "./TextAnimations/BlurText/BlurText.jsx";
 
 const greetings = [
   { lang: "EN", text: "Hello!" },
@@ -75,26 +76,21 @@ export default function HeroSection() {
     return () => clearInterval(cursorInterval);
   }, []);
 
-  // Generate sparks on profile pic click
-  const generateSparks = () => {
-    const newSparks = Array.from({ length: 8 });
-  };
-
   return (
     <section className="flex min-h-screen items-center justify-center px-4 py-8">
       <div className="w-full max-w-6xl">
         {/* Mobile: stack vertically; Desktop: side-by-side */}
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 md:gap-12">
+        <div className="flex flex-col items-center md:grid md:grid-cols-2">
           {/* Profile Image - Mobile: Top; Desktop: left */}
-          <div className="order-1 flex justify-center md:ml-6 md:justify-start">
-            <PixelTransitionProfile />
+          <div className="order-1 flex md:justify-start md:pl-12">
+            <PixelTransitionProfile pixelColor="#eb6f92" />
           </div>
 
           {/* Content - Mobile: Bottom, Desktop right */}
-          <div className="order-2 text-center md:text-right">
+          <div className="order-2 text-center md:pr-6">
             {/* Greeting with typewriter effect */}
-            <div className="text-lg md:text-xl">
-              <span className="inline-flex items-center">
+            <div className="mt-6 text-lg md:text-xl">
+              <span className="inline-flex">
                 {displayText}
                 <span
                   className={`bg-rosepinefoam mx-1 h-6 w-0.5 ${showCursor ? "opacity-100" : "opacity-0"} transition-opacity`}
@@ -103,6 +99,8 @@ export default function HeroSection() {
               <span className="opacity-50">
                 [{greetings[currentGreeting].lang}]
               </span>
+
+              {/* Introduction */}
               <h1 className="text-2xl md:text-3xl">
                 I'm{" "}
                 <span className="text-rosepinelove font-bold">
@@ -114,6 +112,13 @@ export default function HeroSection() {
                   />
                 </span>
               </h1>
+
+              {/* Brief Description */}
+              <BlurText
+                delay={50}
+                text="A quantitative finance student at SMU combining business strategy with technological innovation. Passionate about machine learning, AI, and programming—constantly exploring how technology can transform financial markets. When I'm not coding or analyzing data, you'll find me hiking trails and seeking new perspectives."
+                className="mt-6"
+              />
             </div>
           </div>
         </div>

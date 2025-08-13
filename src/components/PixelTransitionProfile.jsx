@@ -113,7 +113,7 @@ export default function PixelTransitionProfile({
     >
       {/* Show tooltip */}
       {showTooltip && !isAnimating && (
-        <div className="bg-rosepinehighlight-high -rounded-lg absolute -top-9 left-1/2 z-10 -translate-x-1/2 transform px-3 py-1 text-sm">
+        <div className="bg-rosepinehighlight-high absolute -top-9 left-1/2 z-10 -translate-x-1/2 transform rounded-lg px-3 py-1 text-sm">
           Click Me!
           <div className="border-t-rosepinehighlight-high absolute top-full left-1/2 h-0 w-0 -translate-x-1/2 transform border-t-4 border-r-4 border-l-4 border-transparent"></div>
         </div>

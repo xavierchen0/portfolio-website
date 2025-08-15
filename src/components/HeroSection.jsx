@@ -118,7 +118,7 @@ export default function HeroSection({ id }) {
 
               {/* Brief Description */}
 
-              <SlideUpTextAnimation className="mt-6" trigger="mount">
+              <SlideUpTextAnimation className="mt-6" trigger="scroll">
                 <p>
                   I translate caffeine into code and complex problems into
                   elegant solutions. I'm a{" "}

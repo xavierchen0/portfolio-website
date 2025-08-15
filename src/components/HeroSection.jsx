@@ -81,16 +81,16 @@ export default function HeroSection({ id }) {
       id={id}
       className="flex min-h-screen items-center justify-center px-4 py-8"
     >
-      <div className="w-full max-w-6xl">
+      <div className="w-full md:px-16">
         {/* Mobile: stack vertically; Desktop: side-by-side */}
-        <div className="flex flex-col items-center md:grid md:grid-cols-5">
+        <div className="flex flex-col items-center md:flex-row md:gap-20">
           {/* Profile Image - Mobile: Top; Desktop: left */}
-          <div className="order-1 flex md:col-span-2 md:justify-center">
+          <div className="order-1 flex-shrink-0">
             <PixelTransitionProfile pixelColor="#eb6f92" />
           </div>
 
           {/* Content - Mobile: Bottom, Desktop right */}
-          <div className="order-2 text-center md:col-span-3">
+          <div className="order-2 text-center md:flex-1">
             {/* Greeting with typewriter effect */}
             <div className="mt-6 text-lg md:text-xl">
               <span className="inline-flex">

@@ -15,6 +15,38 @@ export function NavBar({ items, className }) {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Intersection Observer to detect active sessions
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: "-10% 0px -70% 0px",
+      threshold: 0.1,
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const correspondingItem = items.find(
+            (item) => item.url === `#${entry.target.id}`,
+          );
+          if (correspondingItem) {
+            setActiveTab(correspondingItem.name);
+          }
+        }
+      });
+    }, observerOptions);
+
+    items.forEach((item) => {
+      const sectionId = item.url.substring(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        observer.observe(section);
+      }
+    });
+
+    return () => observer.disconnect();
+  }, [items]);
+
   const handleItemClick = (item) => {
     setActiveTab(item.name);
     const element = document.querySelector(item.url);

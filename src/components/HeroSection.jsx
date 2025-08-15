@@ -83,14 +83,14 @@ export default function HeroSection({ id }) {
     >
       <div className="w-full max-w-6xl">
         {/* Mobile: stack vertically; Desktop: side-by-side */}
-        <div className="flex flex-col items-center md:grid md:grid-cols-2">
+        <div className="flex flex-col items-center md:grid md:grid-cols-5">
           {/* Profile Image - Mobile: Top; Desktop: left */}
-          <div className="order-1 flex md:justify-start md:pl-30">
+          <div className="order-1 flex md:col-span-2 md:justify-center">
             <PixelTransitionProfile pixelColor="#eb6f92" />
           </div>
 
           {/* Content - Mobile: Bottom, Desktop right */}
-          <div className="order-2 text-center md:pr-6">
+          <div className="order-2 text-center md:col-span-3">
             {/* Greeting with typewriter effect */}
             <div className="mt-6 text-lg md:text-xl">
               <span className="inline-flex">

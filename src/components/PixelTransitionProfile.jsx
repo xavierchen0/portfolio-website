@@ -108,7 +108,6 @@ export default function PixelTransitionProfile({
       className="ring-rosepinefoam hover:ring-rosepinelove relative h-32 w-32 transform cursor-pointer rounded-full ring-4 transition-all duration-300 hover:scale-110 active:scale-90 md:h-64 md:w-64"
       onMouseEnter={() => !isAnimating && setShowTooltip(true)}
       onMouseLeave={() => setShowTooltip(false)}
-      onClick={animatePixelTransition}
     >
       {/* Show tooltip */}
       {showTooltip && !isAnimating && (
@@ -119,7 +118,11 @@ export default function PixelTransitionProfile({
       )}
 
       {/* Profile Container */}
-      <div ref={containerRef} className="h-full w-full rounded-full">
+      <div
+        ref={containerRef}
+        className="h-full w-full rounded-full"
+        onClick={animatePixelTransition}
+      >
         {/* Current Image */}
         <img
           src={profileImages[currentImageIndex]}
@@ -130,7 +133,7 @@ export default function PixelTransitionProfile({
         {/* Pixel Grid overlay */}
         <div
           ref={pixelGridRef}
-          className="pinelove pointer-events-none absolute inset-0 z-10 h-full w-full overflow-hidden rounded-full"
+          className="pointer-events-none absolute inset-0 z-10 h-full w-full overflow-hidden rounded-full"
           style={{ clipPath: "circle(50% at center)" }}
         />
       </div>

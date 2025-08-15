@@ -22,11 +22,7 @@ function App() {
   return (
     <>
       <NavBar items={navItems} />
-      <HeroSection />
-
-      <section className="flex h-screen items-center justify-center bg-gradient-to-b">
-        <h1 className="text-6xl text-white">About Me</h1>
-      </section>
+      <HeroSection id="About" />
 
       {/* Education Section */}
       <section className="flex h-screen items-center justify-center bg-gradient-to-b">

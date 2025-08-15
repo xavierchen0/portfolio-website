@@ -16,7 +16,7 @@ const greetings = [
   { lang: "PT", text: "Olá!" },
 ];
 
-export default function HeroSection() {
+export default function HeroSection({ id }) {
   const [currentGreeting, setCurrentGreeting] = useState(0);
   const [displayText, setDisplayText] = useState("");
   const [isTyping, setIsTyping] = useState(true);
@@ -78,7 +78,7 @@ export default function HeroSection() {
 
   return (
     <section
-      id="About"
+      id={id}
       className="flex min-h-screen items-center justify-center px-4 py-8"
     >
       <div className="w-full max-w-6xl">

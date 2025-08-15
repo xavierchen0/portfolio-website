@@ -78,7 +78,7 @@ export function NavBar({ items, className }) {
         clearTimeout(clickTimeoutRef.current);
       }
     };
-  });
+  }, []);
 
   // 1. create the outer navbar container for positioning and layout of the container
   // 2. create the inner navbar container for visual presentation of the navitems

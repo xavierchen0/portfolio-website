@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
 export function NavBar({ items, className }) {
   const [activeTab, setActiveTab] = useState(items[0].name);
   const [isScrolled, setIsScrolled] = useState(false);
+  const isManualNavigate = useRef(false);
+  const clickTimeoutRef = useRef(null);
 
   // Add Event listener to detect scroll when it goes past viewport
   useEffect(() => {
@@ -25,6 +27,8 @@ export function NavBar({ items, className }) {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
+        if (isManualNavigate.current) return;
+
         if (entry.isIntersecting) {
           const correspondingItem = items.find(
             (item) => item.url === `#${entry.target.id}`,
@@ -48,7 +52,13 @@ export function NavBar({ items, className }) {
   }, [items]);
 
   const handleItemClick = (item) => {
+    if (clickTimeoutRef.current) {
+      clearTimeout(clickTimeoutRef.current);
+    }
+
     setActiveTab(item.name);
+    isManualNavigate.current = true;
+
     const element = document.querySelector(item.url);
     if (element) {
       element.scrollIntoView({
@@ -56,7 +66,19 @@ export function NavBar({ items, className }) {
         block: "start",
       });
     }
+
+    clickTimeoutRef.current = setTimeout(() => {
+      isManualNavigate.current = false;
+    }, 1000);
   };
+
+  useEffect(() => {
+    return () => {
+      if (clickTimeoutRef.current) {
+        clearTimeout(clickTimeoutRef.current);
+      }
+    };
+  });
 
   // 1. create the outer navbar container for positioning and layout of the container
   // 2. create the inner navbar container for visual presentation of the navitems

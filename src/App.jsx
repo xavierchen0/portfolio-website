@@ -11,7 +11,7 @@ import {
 import { motion } from "motion/react";
 
 const navItems = [
-  { name: "About", url: "/", icon: Info },
+  { name: "About", url: "#About", icon: Info },
   { name: "Education", url: "/", icon: BookOpenText },
   { name: "Experiences", url: "/", icon: Briefcase },
   { name: "Projects", url: "/", icon: FolderGit2 },

@@ -77,7 +77,10 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="flex min-h-screen items-center justify-center px-4 py-8">
+    <section
+      id="About"
+      className="flex min-h-screen items-center justify-center px-4 py-8"
+    >
       <div className="w-full max-w-6xl">
         {/* Mobile: stack vertically; Desktop: side-by-side */}
         <div className="flex flex-col items-center md:grid md:grid-cols-2">

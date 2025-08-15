@@ -18,6 +18,13 @@ export function NavBar({ items, className }) {
   const handleItemClick = (item) => {
     setActiveTab(item.name);
     // TODO: add functionality to jump to section
+    const element = document.querySelector(item.url);
+    if (element) {
+      element.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    }
   };
 
   // 1. create the outer navbar container for positioning and layout of the container

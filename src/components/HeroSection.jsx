@@ -81,7 +81,7 @@ export default function HeroSection({ id }) {
       id={id}
       className="flex min-h-screen items-center justify-center px-4 py-8"
     >
-      <div className="w-full md:px-16">
+      <div className="w-full max-w-6xl md:px-16">
         {/* Mobile: stack vertically; Desktop: side-by-side */}
         <div className="flex flex-col items-center md:flex-row md:gap-20">
           {/* Profile Image - Mobile: Top; Desktop: left */}

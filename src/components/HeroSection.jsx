@@ -1,7 +1,7 @@
 import DecryptedText from "./TextAnimations/DecryptedText/DecryptedText.jsx";
 import React, { useState, useEffect } from "react";
 import PixelTransitionProfile from "./PixelTransitionProfile.jsx";
-import BlurText from "./TextAnimations/BlurText/BlurText.jsx";
+import SlideUpTextAnimation from "./SlideUpTextAnimation.jsx";
 
 const greetings = [
   { lang: "EN", text: "Hello!" },
@@ -82,7 +82,7 @@ export default function HeroSection() {
         {/* Mobile: stack vertically; Desktop: side-by-side */}
         <div className="flex flex-col items-center md:grid md:grid-cols-2">
           {/* Profile Image - Mobile: Top; Desktop: left */}
-          <div className="order-1 flex md:justify-start md:pl-12">
+          <div className="order-1 flex md:justify-start md:pl-30">
             <PixelTransitionProfile pixelColor="#eb6f92" />
           </div>
 
@@ -114,11 +114,24 @@ export default function HeroSection() {
               </h1>
 
               {/* Brief Description */}
-              <BlurText
-                delay={50}
-                text="A quantitative finance student at SMU combining business strategy with technological innovation. Passionate about machine learning, AI, and programming—constantly exploring how technology can transform financial markets. When I'm not coding or analyzing data, you'll find me hiking trails and seeking new perspectives."
-                className="mt-6"
-              />
+
+              <SlideUpTextAnimation className="mt-6" trigger="mount">
+                <p>
+                  I translate caffeine into code and complex problems into
+                  elegant solutions. I'm a{" "}
+                  <span className="text-rosepinefoam">
+                    Quantitative Finance
+                  </span>{" "}
+                  student passionate about{" "}
+                  <span className="text-rosepinefoam">Computer Science</span>,
+                  with{" "}
+                  <span className="text-rosepinefoam">
+                    ML/AI internship experiences
+                  </span>{" "}
+                  and an unhealthy obsession with{" "}
+                  <code className="text-rosepinepine">Neovim</code>.
+                </p>
+              </SlideUpTextAnimation>
             </div>
           </div>
         </div>

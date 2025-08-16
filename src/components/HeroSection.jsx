@@ -120,8 +120,7 @@ export default function HeroSection({ id }) {
 
               <SlideUpTextAnimation className="mt-6" trigger="scroll">
                 <p>
-                  I translate caffeine into code and complex problems into
-                  elegant solutions. I'm a{" "}
+                  I'm a{" "}
                   <span className="text-rosepinefoam">
                     Quantitative Finance
                   </span>{" "}

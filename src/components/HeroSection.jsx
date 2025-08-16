@@ -104,7 +104,7 @@ export default function HeroSection({ id }) {
               </span>
 
               {/* Introduction */}
-              <h1 className="text-2xl md:text-3xl">
+              <h1 className="text-4xl">
                 I'm{" "}
                 <span className="text-rosepinelove font-bold">
                   <DecryptedText

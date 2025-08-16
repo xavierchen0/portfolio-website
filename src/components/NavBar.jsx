@@ -93,7 +93,7 @@ export function NavBar({ items, className }) {
                 isActive ? "bg-rosepinehighlight-high" : ""
               }`}
             >
-              <span className="hidden inline">{item.name}</span>
+              <span className="hidden md:inline">{item.name}</span>
               <span className="md:hidden">
                 <Icon size={18} strokeWidth={2.5} />
               </span>

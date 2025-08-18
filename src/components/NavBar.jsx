@@ -75,10 +75,10 @@ export function NavBar({ items, className }) {
   // 3. create each item's button
   return (
     <div
-      className={`fixed bottom-0 left-1/2 z-50 mb-6 -translate-x-1/2 transition-all duration-500 ease-out md:top-0 md:mt-6`}
+      className={`pointer-events-none fixed bottom-0 left-1/2 z-50 mb-6 -translate-x-1/2 transition-all duration-500 ease-out md:top-0 md:mt-6`}
     >
       <div
-        className={`flex items-center gap-3 rounded-full bg-gray-100/5 px-3 py-1 shadow-lg backdrop-blur-lg transition-all duration-300 ease-out`}
+        className={`pointer-events-auto flex items-center gap-3 rounded-full bg-gray-100/5 px-3 py-1 shadow-lg backdrop-blur-lg transition-all duration-300 ease-out`}
       >
         {items.map((item) => {
           const Icon = item.icon;

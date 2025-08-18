@@ -57,10 +57,7 @@ export default function EducationSection({ id }) {
   };
 
   return (
-    <section
-      id={id}
-      className="flex min-h-screen items-start justify-center px-4 py-8"
-    >
+    <section id={id} className="flex items-start justify-center px-4">
       <div className="w-full max-w-6xl">
         {/* Header */}
         <motion.div

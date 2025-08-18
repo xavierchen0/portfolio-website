@@ -128,9 +128,9 @@ export default function EducationSection({ id }) {
                   onClick={() => toggleCard(edu.id)}
                 >
                   {/* Card Header */}
-                  <div className="mb-4 flex flex-col space-y-4 lg:flex-row lg:items-start lg:justify-between lg:space-y-0">
+                  <div className="mb-4 flex flex-col space-y-4 md:flex-row md:items-start md:justify-between md:space-y-0">
                     <div className="flex-1">
-                      <h3 className="mb-2 text-lg leading-tight font-bold md:text-xl lg:text-2xl">
+                      <h3 className="mb-2 text-lg leading-tight font-bold md:text-xl">
                         {edu.degree}
                       </h3>
                       <p className="text-base font-medium text-gray-300 opacity-50 md:text-lg">
@@ -138,7 +138,7 @@ export default function EducationSection({ id }) {
                       </p>
                     </div>
 
-                    <div className="flex items-center gap-3 lg:flex-shrink-0">
+                    <div className="flex items-center gap-3 md:flex-shrink-0">
                       {/* Expand/Collapse Icon */}
                       {edu.achievements && edu.achievements.length > 0 && (
                         <motion.div
@@ -155,7 +155,7 @@ export default function EducationSection({ id }) {
                   </div>
 
                   {/* Card Details */}
-                  <div className="mb-4 flex flex-col gap-3 text-sm md:gap-4 lg:flex-row lg:items-center lg:gap-6">
+                  <div className="mb-4 flex flex-col gap-3 text-sm md:flex-row md:items-center md:gap-4">
                     <div className="flex items-center gap-2">
                       <Calendar className="text-rosepinefoam h-4 w-4 flex-shrink-0" />
                       <span className="text-gray-300">{edu.period}</span>

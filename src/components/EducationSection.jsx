@@ -87,7 +87,7 @@ export default function EducationSection({ id }) {
                     type: "spring",
                     stiffness: 200,
                   }}
-                  className="bg-rosepineoverlay border-rosepinefoam z-10 flex h-10 w-10 items-center justify-center rounded-full border-2 shadow-lg md:h-12 md:w-12"
+                  className="bg-rosepineoverlay border-rosepinefoam flex h-10 w-10 items-center justify-center rounded-full border-2 shadow-lg md:h-12 md:w-12"
                 >
                   <GraduationCap className="text-rosepinefoam h-5 w-5 md:h-6 md:w-6" />
                 </motion.div>

@@ -86,7 +86,7 @@ export default function EducationSection({ id }) {
                   viewport={{ once: true }}
                   transition={{
                     duration: 0.4,
-                    delay: index * 0.2 + 0.6,
+                    delay: 0.8,
                     type: "spring",
                     stiffness: 200,
                   }}
@@ -169,9 +169,7 @@ export default function EducationSection({ id }) {
                     </div>
                     {edu.gpa !== "nil" && (
                       <div className="flex items-center gap-2 font-medium">
-                        <span className="text-rosepinefoam">
-                          GPA: {edu.gpa}
-                        </span>
+                        <span>GPA: {edu.gpa}</span>
                       </div>
                     )}
                   </div>

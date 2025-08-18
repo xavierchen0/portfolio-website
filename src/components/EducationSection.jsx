@@ -65,9 +65,9 @@ export default function EducationSection({ id }) {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.3 }}
-          className="mb-12 text-center"
+          className="mb-8 text-center"
         >
-          <h2 className="text-4xl font-bold">Education</h2>
+          <h2 className="text-3xl font-bold md:text-4xl">Education</h2>
         </motion.div>
 
         {/* Timeline using CSS Grid - Much more responsive */}
@@ -87,9 +87,9 @@ export default function EducationSection({ id }) {
                     type: "spring",
                     stiffness: 200,
                   }}
-                  className="bg-rosepineoverlay border-rosepinefoam flex h-10 w-10 items-center justify-center rounded-full border-2 shadow-lg md:h-12 md:w-12"
+                  className="bg-rosepineoverlay border-rosepinefoam flex h-8 w-8 items-center justify-center rounded-full border-2 shadow-lg md:h-10 md:w-10"
                 >
-                  <GraduationCap className="text-rosepinefoam h-5 w-5 md:h-6 md:w-6" />
+                  <GraduationCap className="text-rosepinefoam h-4 w-4 md:h-5 md:w-5" />
                 </motion.div>
 
                 {/* Timeline line - Only show if not last item */}
@@ -114,14 +114,14 @@ export default function EducationSection({ id }) {
                   delay: index * 0.2 + 0.4,
                   ease: "easeOut",
                 }}
-                className={`pb-8 ${index === educationData.length - 1 ? "pb-0" : ""}`}
+                className={`pb-6 ${index === educationData.length - 1 ? "pb-0" : ""}`}
               >
                 <motion.div
                   whileHover={{
                     y: -5,
                     boxShadow: "0 20px 40px rgba(235, 111, 146, 0.2)",
                   }}
-                  className={`bg-rosepineoverlay border-rosepinefoam cursor-pointer rounded-xl border p-4 shadow-md transition-all duration-300 md:p-6 ${
+                  className={`bg-rosepineoverlay border-rosepinefoam cursor-pointer rounded-xl border p-3 shadow-md transition-all duration-300 md:p-4 ${
                     expandedCard === edu.id ? "ring-rosepinefoam ring-2" : ""
                   }`}
                   onClick={() => toggleCard(edu.id)}
@@ -129,10 +129,10 @@ export default function EducationSection({ id }) {
                   {/* Card Header */}
                   <div className="mb-4 flex flex-col space-y-4 md:flex-row md:items-start md:justify-between md:space-y-0">
                     <div className="flex-1">
-                      <h3 className="mb-2 text-lg leading-tight font-bold md:text-xl">
+                      <h3 className="mb-1 leading-tight font-bold md:text-lg">
                         {edu.degree}
                       </h3>
-                      <p className="text-base font-medium text-gray-300 opacity-50 md:text-lg">
+                      <p className="text-sm font-medium opacity-50">
                         {edu.institution}
                       </p>
                     </div>

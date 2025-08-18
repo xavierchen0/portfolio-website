@@ -104,7 +104,6 @@ export default function EducationSection({ id }) {
                 )}
               </div>
 
-              {/* TODO: Figure out whether I want hover. It is lagging */}
               {/* Content Column - Education Card */}
               <motion.div
                 initial={{ opacity: 0, x: -50 }}

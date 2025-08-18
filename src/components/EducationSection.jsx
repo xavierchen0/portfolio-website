@@ -179,7 +179,7 @@ export default function EducationSection({ id }) {
                           initial={{ height: 0, opacity: 0 }}
                           animate={{ height: "auto", opacity: 1 }}
                           exit={{ height: 0, opacity: 0 }}
-                          transition={{ duration: 0.3, ease: "easeInOut" }}
+                          transition={{ duration: 0.3, ease: "easeOut" }}
                           className="overflow-hidden"
                         >
                           <div className="border-rosepinehighlight-high border-t pt-4">
@@ -192,11 +192,13 @@ export default function EducationSection({ id }) {
                                 return (
                                   <motion.div
                                     key={idx}
-                                    initial={{ opacity: 0, x: -20 }}
-                                    animate={{ opacity: 1, x: 0 }}
+                                    initial={{ scale: 0 }}
+                                    whileInView={{ scale: 1 }}
+                                    viewport={{ once: true }}
                                     transition={{
                                       duration: 0.3,
-                                      delay: idx * 0.1,
+                                      ease: "easeOut",
+                                      delay: idx * 0.05,
                                     }}
                                     className="hover:bg-rosepinefoam/10 flex items-start gap-3 rounded-lg p-3 transition-all duration-200"
                                   >

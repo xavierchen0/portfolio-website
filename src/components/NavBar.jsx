@@ -10,23 +10,32 @@ export function NavBar({ items, className }) {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: "-10% 0px -70% 0px",
-      threshold: 0.1,
+      rootMargin: "-40% 0px -40% 0px",
+      threshold: 0,
     };
 
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (isManualNavigate.current) return;
+      if (isManualNavigate.current) return;
 
-        if (entry.isIntersecting) {
-          const correspondingItem = items.find(
-            (item) => item.url === `#${entry.target.id}`,
-          );
-          if (correspondingItem) {
-            setActiveTab(correspondingItem.name);
-          }
+      // Find the entry with the largest intersection ratio
+      let mostVisibleEntry = null;
+      let maxRatio = 0;
+
+      entries.forEach((entry) => {
+        if (entry.isIntersecting && entry.intersectionRatio > maxRatio) {
+          maxRatio = entry.intersectionRatio;
+          mostVisibleEntry = entry;
         }
       });
+
+      if (mostVisibleEntry) {
+        const correspondingItem = items.find(
+          (item) => item.url === `#${mostVisibleEntry.target.id}`,
+        );
+        if (correspondingItem) {
+          setActiveTab(correspondingItem.name);
+        }
+      }
     }, observerOptions);
 
     items.forEach((item) => {

@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion } from "motion/react";
 
-// TODO: change sidebar to top bar
 export function NavBar({ items, className }) {
   const [activeTab, setActiveTab] = useState(items[0].name);
   const isManualNavigate = useRef(false);

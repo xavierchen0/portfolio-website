@@ -2,6 +2,7 @@ import "./App.css";
 import { NavBar } from "./components/NavBar.jsx";
 import HeroSection from "./components/HeroSection.jsx";
 import EducationSection from "./components/EducationSection.jsx";
+import ExperiencesSection from "./components/ExperiencesSection.jsx";
 import {
   Info,
   BookOpenText,
@@ -25,14 +26,7 @@ function App() {
       <NavBar items={navItems} />
       <HeroSection id="About" />
       <EducationSection id="Education" />
-
-      {/* Experiences Section */}
-      <section
-        id="Experiences"
-        className="flex h-screen items-center justify-center bg-gradient-to-b"
-      >
-        <h1 className="text-6xl text-white">Exp</h1>
-      </section>
+      <ExperiencesSection id="Experiences" />
 
       {/* Projects Section */}
       <section

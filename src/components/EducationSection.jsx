@@ -19,6 +19,7 @@ const educationData = [
     location: "Singapore",
     gpa: "nil",
     status: "current",
+    logo: "/smulogo.svg",
     achievements: [],
   },
   {
@@ -29,6 +30,7 @@ const educationData = [
     location: "Singapore",
     gpa: "4.0/4.0 (Summa Cum Laude)",
     status: "current",
+    logo: "/smulogo.svg",
     achievements: [
       {
         type: "award",
@@ -87,9 +89,17 @@ export default function EducationSection({ id }) {
                     type: "spring",
                     stiffness: 200,
                   }}
-                  className="bg-rosepineoverlay border-rosepinefoam flex h-8 w-8 items-center justify-center rounded-full border-2 shadow-lg md:h-10 md:w-10"
+                  className="border-rosepinefoam flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border-2 bg-white shadow-lg md:h-10 md:w-10"
                 >
-                  <GraduationCap className="text-rosepinefoam h-4 w-4 md:h-5 md:w-5" />
+                  {edu.logo ? (
+                    <img
+                      src={edu.logo}
+                      alt={`${edu.institution} logo`}
+                      className="h-6 w-6 object-contain md:h-8 md:w-8"
+                    />
+                  ) : (
+                    <GraduationCap className="text-rosepinefoam h-4 w-4 md:h-5 md:w-5" />
+                  )}
                 </motion.div>
 
                 {/* Timeline line - Only show if not last item */}

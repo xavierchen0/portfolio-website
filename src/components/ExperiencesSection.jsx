@@ -41,6 +41,7 @@ const experiencesData = [
     location: "Singapore",
     type: "Internship",
     status: "completed",
+    logo: "/hsbclogo.svg",
     description:
       "Performed data processing and implemented data pipelines to Team Dashboard.",
     achievements: [],
@@ -54,6 +55,7 @@ const experiencesData = [
     location: "Singapore",
     type: "Internship",
     status: "completed",
+    logo: "/sgxlogo.svg",
     description: "Carried out data processing and created custom dashboards.",
     achievements: [],
     technologies: [
@@ -72,6 +74,7 @@ const experiencesData = [
     location: "Singapore",
     type: "Internship",
     status: "completed",
+    logo: "/hsbclogo.svg",
     description:
       "Assisted in automation and daily operations of Private Banking.",
     achievements: [],
@@ -85,6 +88,7 @@ const experiencesData = [
     location: "Singapore",
     type: "Internship",
     status: "completed",
+    logo: "/opallogo.png",
     description: "Created custom dashboards.",
     achievements: [],
     technologies: ["Python", "SQL", "Excel VBA", "PowerBI"],
@@ -129,13 +133,13 @@ export default function ExperiencesSection({ id }) {
                     type: "spring",
                     stiffness: 200,
                   }}
-                  className="bg-white flex h-8 w-8 items-center justify-center rounded-full border-2 border-rosepinefoam shadow-lg md:h-10 md:w-10 overflow-hidden"
+                  className="border-rosepinefoam flex h-8 w-8 items-center justify-center overflow-hidden rounded-full border-2 bg-white shadow-lg md:h-10 md:w-10"
                 >
                   {exp.logo ? (
-                    <img 
-                      src={exp.logo} 
+                    <img
+                      src={exp.logo}
                       alt={`${exp.company} logo`}
-                      className="h-6 w-6 md:h-8 md:w-8 object-contain"
+                      className="h-6 w-6 object-contain md:h-8 md:w-8"
                     />
                   ) : (
                     <Briefcase className="text-rosepinefoam h-4 w-4 md:h-5 md:w-5" />

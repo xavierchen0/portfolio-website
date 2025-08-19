@@ -103,7 +103,10 @@ export default function ExperiencesSection({ id }) {
   };
 
   return (
-    <section id={id} className="flex items-start justify-center px-4 pt-8">
+    <section
+      id={id}
+      className="flex items-start justify-center px-4 pt-8 pb-30"
+    >
       <div className="w-full max-w-6xl">
         {/* Header */}
         <motion.div

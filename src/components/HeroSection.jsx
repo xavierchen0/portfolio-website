@@ -14,7 +14,7 @@ const greetings = [
   { lang: "RU", text: "Привет!" },
   { lang: "IT", text: "Ciao!" },
   { lang: "PT", text: "Olá!" },
-  { lang: "PH", text: "Mabuhay" },
+  { lang: "PH", text: "Mabuhay!" },
 ];
 
 export default function HeroSection({ id }) {

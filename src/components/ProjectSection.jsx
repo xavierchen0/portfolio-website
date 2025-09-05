@@ -8,7 +8,7 @@ const projects = [
     id: 1,
     title: "SMU Room Booking Automation",
     description:
-      "An automated tool to book your favorite SMU study rooms and project meeting spaces. Eliminates the frustration of missing out on preferred rooms by automating the entire booking process with customizable configuration through .env files and scheduled execution via cron jobs.",
+      "An automated tool to book your favorite SMU study rooms and project meeting spaces. Eliminates the frustration of missing out on preferred rooms by automating the entire booking process with customisable configuration through .env files and scheduled execution via cron jobs.",
     image: "/smu_fbs_autobooking_demo.gif",
     technologies: ["JavaScript", "Node.js", "Playwright", "Bash", "Cron Jobs"],
     githubUrl: "https://github.com/xavierchen0/smu-fbs-auto-booker",
